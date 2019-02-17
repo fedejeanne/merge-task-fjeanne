@@ -2,7 +2,10 @@
 ## Description
 ## How to run the app
 ### For developers
-Import the Maven project into your favorite IDE and run it with the following parameters
+Import the Maven project into your favorite IDE and run it with the following parameters.
+```
+TO-DO: take input parameters
+```
 ### As a stand-alone Java app
 TO-DO: how to run it and parse the input list?
 ## Complexity of the algorithm
