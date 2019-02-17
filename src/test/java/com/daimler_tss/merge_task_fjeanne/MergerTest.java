@@ -95,4 +95,31 @@ public class MergerTest extends TestCase {
 		assertEquals(pMax.getY(), input.get(0).getY());
 	}
 
+	/**
+	 * Example from the assignment. Input: [25,30] [2,19] [14, 23] [4,8] Output:
+	 * [2,23] [25,30]
+	 */
+	public void testMergePoints_1() {
+		Merger merger = new Merger();
+
+		ArrayList<Double> input = new ArrayList<Point2D.Double>();
+
+		input.add(new Point2D.Double(25, 30));
+		input.add(new Point2D.Double(2, 19));
+		input.add(new Point2D.Double(14, 23));
+		input.add(new Point2D.Double(4, 8));
+
+		merger.merge(input);
+
+		// Only 1 (merged) element
+		assertEquals(2, input.size());
+
+		// Check the merged elements
+		// Note that the elements are type "double"
+		assertEquals(2.0, input.get(0).getX());
+		assertEquals(23.0, input.get(0).getY());
+		assertEquals(25.0, input.get(1).getX());
+		assertEquals(30.0, input.get(1).getY());
+	}
+
 }

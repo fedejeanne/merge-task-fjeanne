@@ -49,20 +49,26 @@ public class Merger {
 
 		// Now do the merging
 		if (input.size() > 1) {
-			for (int i = 1; i < input.size(); ++i) {
 
-				// compare the current element with the previous one
-				Point2D.Double curr = input.get(i);
-				Point2D.Double previous = input.get(i - 1);
+			int i = 0;
+			while (i < input.size() - 1) {
 
-				if (curr.getX() <= previous.getY()) {
+				// compare the current element with the next one
+				Point2D.Double currElem = input.get(i);
+				Point2D.Double nextElem = input.get(i + 1);
+
+				if (currElem.getY() >= nextElem.getX()) {
 					// merge the elements and replace in the result list
-					Point2D.Double mergedElem = new Point2D.Double(previous.getX(),
-							Math.max(previous.getY(), curr.getY()));
-					input.remove(i);
-					input.remove(i - 1);
+					Point2D.Double mergedElem = new Point2D.Double(currElem.getX(),
+							Math.max(currElem.getY(), nextElem.getY()));
 
-					input.add(i - 1, mergedElem);
+					input.remove(i);
+					input.remove(i);
+
+					input.add(i, mergedElem);
+				} else {
+					// no changes. Go to the next element
+					++i;
 				}
 			}
 		}
