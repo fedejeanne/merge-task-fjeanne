@@ -122,4 +122,50 @@ public class MergerTest extends TestCase {
 		assertEquals(30.0, input.get(1).getY());
 	}
 
+	/**
+	 * Merge 100 overlapping and consecutive intervals into 1:<br>
+	 * [0,1], [1,2], ...,[99,100] => [0,100]
+	 */
+	public void testMergeConsecutiveOverlappingIntervalsInto1() {
+		Merger merger = new Merger();
+
+		ArrayList<Double> input = new ArrayList<Point2D.Double>();
+
+		for (int i = 0; i < 100; ++i)
+			input.add(new Point2D.Double(i, i + 1));
+
+		merger.merge(input);
+
+		// Only 1 (merged) element
+		assertEquals(1, input.size());
+
+		// Check the merged element
+		// Note that the elements are type "double"
+		assertEquals(0.0, input.get(0).getX());
+		assertEquals(100.0, input.get(0).getY());
+
+	}
+
+	/**
+	 * Create 100 non-overlapping (and consecutive) intervals ([0.1,1], [1.1,2],
+	 * ...,[98.1, 99], [99.1,100]) and try to merge them. The output should have the
+	 * exact same size as the input (no merges).
+	 */
+	public void testNoMergeNonOverlappingIntervals() {
+		Merger merger = new Merger();
+
+		ArrayList<Double> input = new ArrayList<Point2D.Double>();
+
+		for (int i = 0; i < 100; ++i)
+			// the points don't overlap because of the 0.1 difference in the "X" coordinate
+			input.add(new Point2D.Double(i + 0.1, i + 1));
+
+		int originalSize = input.size();
+
+		merger.merge(input);
+
+		// Same amount of elements as before doing the merge, ergo no merge.
+		assertEquals(originalSize, input.size());
+	}
+
 }
