@@ -38,7 +38,7 @@ public class MergerTest extends TestCase {
 
 		merger.merge(input);
 
-		assertEquals("The merged list should be empty (size == 0)", input.size(), 0);
+		assertEquals("The merged list should be empty (size == 0)", 0, input.size());
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class MergerTest extends TestCase {
 		assertEquals(input.size(), 2);
 
 		// same elements
-		assertEquals(input.get(0), p0);
-		assertEquals(input.get(1), p1);
+		assertEquals(p0, input.get(0));
+		assertEquals(p1, input.get(1));
 	}
 
 	/**
@@ -88,11 +88,11 @@ public class MergerTest extends TestCase {
 		merger.merge(input);
 
 		// Only 1 (merged) element
-		assertEquals("The list should 1 merged element", input.size(), 1);
+		assertEquals("The list should have 1 merged element", 1, input.size());
 
 		// Check the merged element
-		assertEquals(input.get(0).getX(), pMin.getX());
-		assertEquals(input.get(0).getY(), pMax.getY());
+		assertEquals(pMin.getX(), input.get(0).getX());
+		assertEquals(pMax.getY(), input.get(0).getY());
 	}
 
 }
