@@ -16,3 +16,10 @@ The application does 2 things in order to merge the input intervals:
 2. Traverse the ordered list and merge the intervals if necessary. This is a linear traverse so the complexity is **O(n)**
 
 The overall complexity of the program is therefore the [sum](https://en.wikipedia.org/wiki/Big_O_notation#Sum): **O(n * log(n))**
+
+## TO-DO
+* Create `developer` branch in GIT
+* Simulate a bug fix
+* Simulate a new feature
+* Complete this documentation.
+  * Answer all questions in the exercise
