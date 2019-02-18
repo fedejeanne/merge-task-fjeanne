@@ -12,11 +12,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
 /**
  * Unit test for simple Merger.
  */
-public class MergerTest {//extends TestCase {
+public class MergerTest {// extends TestCase {
 	private static Runtime runtime;
 	private long usedMemoryBefore;
 
@@ -105,8 +104,8 @@ public class MergerTest {//extends TestCase {
 		assertEquals("The list should have 1 merged element", 1, input.size());
 
 		// Check the merged element
-		assertEquals(pMin.getX(), input.get(0).getX());
-		assertEquals(pMax.getY(), input.get(0).getY());
+		assertEquals(pMin.getX(), input.get(0).getX(), 0);
+		assertEquals(pMax.getY(), input.get(0).getY(), 0);
 	}
 
 	/**
@@ -132,10 +131,10 @@ public class MergerTest {//extends TestCase {
 
 		// Check the merged elements
 		// Note that the elements are type "double"
-		assertEquals(2.0, input.get(0).getX());
-		assertEquals(23.0, input.get(0).getY());
-		assertEquals(25.0, input.get(1).getX());
-		assertEquals(30.0, input.get(1).getY());
+		assertEquals(2.0, input.get(0).getX(), 0);
+		assertEquals(23.0, input.get(0).getY(), 0);
+		assertEquals(25.0, input.get(1).getX(), 0);
+		assertEquals(30.0, input.get(1).getY(), 0);
 
 	}
 
@@ -160,8 +159,8 @@ public class MergerTest {//extends TestCase {
 
 		// Check the merged element
 		// Note that the elements are type "double"
-		assertEquals(0.0, input.get(0).getX());
-		assertEquals(100.0, input.get(0).getY());
+		assertEquals(0.0, input.get(0).getX(), 0);
+		assertEquals(100.0, input.get(0).getY(), 0);
 	}
 
 	/**
@@ -185,8 +184,8 @@ public class MergerTest {//extends TestCase {
 
 		// Check the merged element
 		// Note that the elements are type "double"
-		assertEquals(0.0, input.get(0).getX());
-		assertEquals(10000.0, input.get(0).getY());
+		assertEquals(0.0, input.get(0).getX(), 0);
+		assertEquals(10000.0, input.get(0).getY(), 0);
 	}
 
 	/**
