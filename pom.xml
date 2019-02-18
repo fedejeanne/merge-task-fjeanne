@@ -5,7 +5,7 @@
 
 	<groupId>com.daimler_tss</groupId>
 	<artifactId>merge-task-fjeanne</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>merge-task-fjeanne</name>
@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.6.3</version>
+			<version>2.9.8</version>
 		</dependency>
 
 	</dependencies>
